@@ -1,0 +1,50 @@
+.shell {
+    border: 1px solid black;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    padding: 5px;
+}
+
+.calc-container {
+    display: flex;
+    padding: 2px;
+
+}
+
+.num-top, .num-mid, .num-bot, .zero-period-equal {
+    display: flex;   
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-num, .btn-optr {
+    padding: 10px;
+    margin: 3px;
+    width: 100%;
+}
+
+.operator-section {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.screen {
+    display: flex;
+    border: 1px solid black;
+    padding: 15px;
+    margin: 3px;
+    justify-content: right;
+    align-items: center;
+}
+
+.btn-area {
+    display: flex;
+    flex-direction: column;
+}
+
+.numpad, .operators {
+    box-shadow: 2px;
+    padding: 2px;
+}
