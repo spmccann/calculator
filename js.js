@@ -11,8 +11,13 @@ const multiply = (x, y) => {
 }
 
 const divide = (x, y) => {
-    return x / y;
+    if (y === 0) {
+        return "divide by zero"
+    } else {
+        return x / y;
+    }
 }
+
 
 const operate = (operator, x, y) => {
     if (operator === "+") {
@@ -29,7 +34,7 @@ const operate = (operator, x, y) => {
 
 const display = () => {
     const ops = ['+', '-', 'x', '÷']
-    const nums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+    const nums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.']
     let num1 = "";
     let num2 = "";
     let op = "";
@@ -39,47 +44,52 @@ const display = () => {
         button.addEventListener('click', () => {
             let anOperator = ops.includes(button.textContent);
             let aNumber = nums.includes(button.textContent);
-            if (op === "" && anOperator){
+            if (op === "" && anOperator || op !== "" && num2 === "" && anOperator){
                 op = button.textContent;
-                screen.textContent =  num1 + op + num2;
-            } else if (ops.find(text => screen.textContent.includes(text)) && aNumber) {
+                screen.textContent =  `${num1} ${op} ${num2}`;
+            } else if (op !== "" && aNumber) {
                 num2 += button.textContent;
-                screen.textContent =  num1 + op + num2;
+                screen.textContent =  `${num1} ${op} ${num2}`;
             } else if (aNumber) {
                 num1 += button.textContent;
-                screen.textContent =  num1 + op + num2;
+                screen.textContent =  `${num1} ${op} ${num2}`;
             } else {
                 let input = [op,  num1, num2]
-                let calculate = operate(input[0],parseInt(input[1]), parseInt(input[2]))
+                let calculate = operate(input[0],parseFloat(input[1]), parseFloat(input[2]))
                 console.log(input)
                 if (button.textContent === "=") {
                     if (!input.includes("")) {
                         screen.textContent = calculate
                         num1 = screen.textContent;
                         num2 = "";
-                        op = ""; }
-                    else {
+                        op = ""; 
+                    } else {
                         screen.textContent = num1
-                    }           
+                    }        
                 } else if (op.length === 1 && anOperator) {
                     num1 = calculate;
                     num2 = ""; 
                     op = button.textContent;
-                    screen.textContent =  num1 + op + num2;
-                } else if (button.textContent === "C") {
+                    screen.textContent =  `${num1} ${op} ${num2}`;
+                } else if (button.textContent === "Clear") {
                     screen.textContent = 0;
                     num1 = "";
                     num2 = "";
                     op = "";
                     input = "";
+                } else if (button.textContent === "(-)") {
+                    if (num2 === ""){
+                        num1 *= -1;
+                        screen.textContent =  `${num1} ${op} ${num2}`
+                    } else {
+                        num2 *= -1
+                        screen.textContent =  `${num1} ${op} ${num2}`
+                    }
                 }
             }
         });
     });
     
 }
-
-    
-
 
 display()
