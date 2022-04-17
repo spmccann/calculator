@@ -1,71 +1,55 @@
 .shell {
-    border: 1px solid black;
+    border: 15px solid black;
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 25px;
+    font-size: 20px;
     width: fit-content;
     margin: 100px auto 20px auto;
-    padding: 15px;
+    padding: 0px 20px 15px 20px;
     border-radius: 8px;
-    box-shadow: 10px;
+    background-color: rgb(255, 236, 22);
 }
-
 .calc-container {
     display: flex;
-}
-
-.num-top, .num-mid, .num-bot, .zero-period-equal {
-    display: flex;   
-    justify-content: center;
-    align-items: center;
-    
-}
-
-.btn-num, .btn-optr {
-    padding: 30px;
-    margin: 3px;
-    font-size: 25px;
-}
-
+} 
 .btn-optr {
-    background-color: gray;
+    background-color: rgba(8, 4, 4, 0.722);
     color: white;
 }
-
 .operator-section {
     display: flex;
     flex-direction: column;
 }
-
 .screen {
     display: flex;
-    border: 1px solid black;
+    border: 3px solid black;
     border-radius: 8px;
-    padding: 15px;
-    margin: 3px;
+    padding: 18px;
+    margin-bottom: 15px;
     justify-content: right;
     align-items: center;
     background-color: rgba(236, 230, 230, 0.285);
-    font-weight: 500;
     font-size: 35px;
+    background-color: rgb(170, 206, 238);
 }
-.btn-area {
+.numbers-area {
     display: flex;
     flex-direction: column;
 }
-
-.numpad, .operators {
-    padding: 2px;
+.numpad {
+    padding: 30px;
+    margin: 3px;
+    font-size: 20px;
 }
-
-.bot {
-    display: flex;   
-    justify-content: space-between;
-    align-items: center;
-}
-
 button {
     border-radius: 8px;
 
+}
+button:hover {
+    background-color: rgb(170, 206, 238);
+}
+.btn-num {
+    background-color: antiquewhite;
+    border-radius: 30px;
 }
